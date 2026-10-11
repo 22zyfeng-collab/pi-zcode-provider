@@ -1,0 +1,22 @@
+{
+  "name": "pi-zcode-provider",
+  "version": "0.1.0",
+  "description": "Pi Provider Extension for GLM-5.3-Flash through a local ZCode-compatible bridge.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["pi-package"],
+  "files": [
+    "extensions",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/zcode-local.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
