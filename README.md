@@ -42,6 +42,24 @@ Override it with `ZCODE_BRIDGE_URL` before starting Pi:
 ZCODE_BRIDGE_URL=http://127.0.0.1:3000 pi
 ```
 
+## Quota display
+
+Set the bridge admin key in the Pi process environment to enable quota display:
+
+```text
+ZCODE_ADMIN_KEY=<your bridge admin key>
+```
+
+For the portable setup, put it in a local file under `agent/secrets/`, for example `zcode.env`. Do not commit that file.
+
+The extension then refreshes quota information every 60 seconds and shows it in Pi's status bar. Run this command for a full account-by-account view:
+
+```text
+/zcode-quota
+```
+
+It reads the bridge's authenticated `/admin/api/accounts` endpoint and displays remaining units, effective time, and expiry time when the bridge provides those fields.
+
 ## Thinking levels
 
 The extension maps Pi's `max` level to the bridge's `max` value. The model currently exposes `low`, `high`, and `max` after Pi normalizes the mapping.
